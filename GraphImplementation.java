@@ -46,12 +46,12 @@ public class GraphImplementation implements Graph
             {
                 if(incident[j] == 0)
                 {
-                    int[] neigh = neighbors(j);
+                    int[] caster = neighbors(j);
 
-                    for(int k = 0; k < neigh.length; k++)
+                    for(int k = 0; k < caster.length; k++)
                     {
                         // cannot be converted to int. weird workaround
-                        incident[neigh[k]]--;
+                        incident[caster[k]]--;
                     }
 
                     tsort.add(j); 
@@ -59,7 +59,7 @@ public class GraphImplementation implements Graph
                 }
             }
         }
-        //System.out.println("Topological Sort: "+tsort);
+        //System.out.println("Sort: "+tsort);
         return tsort;
     }
 
